@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
 *{
     margin : 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'popins',serif;
+    font-family: "Madimi One", sans-serif;
 }
 .container  {
     position: absolute;
@@ -89,6 +89,11 @@
     background-size: cover;
     opacity: 0;
 }
+.slider .sliders:nth-child(133){
+    left: calc(50% + 2840px);
+    background-size: cover;
+    opacity: 0;
+}
 .buttons{
     position: absolute;
     bottom: 15px;
@@ -134,6 +139,7 @@
 }
 .content h2{
     color: #FAFAD2;
+
 }
 .slider .sliders:nth-child(1) .content,
 .slider .sliders:nth-child(2) .content{
@@ -194,7 +200,10 @@
         left: 1060px;
     }
     .slider .sliders:nth-child(12){
-        left: 1280px;
+        left: 1180px;
+    }
+    .slider .sliders:nth-child(13){
+        left: 1300px;
     }
 
 }
