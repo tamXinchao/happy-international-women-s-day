@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Happy Women'day</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.8.2/angular-route.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="slider.css">
+    <link rel="stylesheet" href="loichuc.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  </head>
+  <body ng-app="myapp" ng-controller="myctrl">
+    <!-- nav -->
+    <section >
+        <div class="container">
+            <div class="row">
+                <nav class="navbar navbar-expand-lg fixed-top">
+                    <div class="container">
+                      <a class="navbar-brand me-auto" href="#!index">Tamhiep Volleyball</a>
+                      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header">
+                          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Tamhiep'Volleyball</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                          <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                            <li class="nav-item">
+                              <a class="nav-link mx-lg-2 active" aria-current="page" href="#!loichuc">Lời chúc</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link mx-lg-2" href="#!thanhvien">Thành viên</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <a href="https://www.facebook.com/profile.php?id=100072035200581" class="login-button">Page</a>
+                      <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                    </div>
+                  </nav>
+            </div>
+        </div>
+    </section>
+    <!-- end nav -->
+    <!-- hero section -->
+    <section class="hero-section">
+        <div class=" container d-flex justify-content-center align-items-center  fs-1 text-white flex-column">
+            <h1><ng-view></ng-view></h1>
+        </div>
+    </section>
+    <!-- end hero -->
+    <!-- slider -->
+    <!-- end slider -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      var app = angular.module("myapp", ["ngRoute"]);
+    app.config(function ($routeProvider) {
+      $routeProvider
+        .when("/", { templateUrl: "home.html", controller: "myctrl" })
+        .when("/thanhvien", { templateUrl: "slider.html", controller: "myctrl" })
+        .when("/loichuc", { templateUrl: "loichuc.html", controller: "myctrl" })
+        .otherwise({ redirectTo: "/", controller: "myctrl" });
+    });
+    app.controller("myctrl", function ($scope, $rootScope, $http, $location, $timeout) {
+        // Define function for next button click
+        $scope.nextSlide = function () {
+            let sliders = document.querySelectorAll('.sliders');
+            let slider = document.querySelector('.slider');
+            slider.appendChild(sliders[0]);
+        };
+
+        // Define function for previous button click
+        $scope.prevSlide = function () {
+            let sliders = document.querySelectorAll('.sliders');
+            let slider = document.querySelector('.slider');
+            slider.prepend(sliders[sliders.length - 1]);
+        };
+    });
+    </script>
+    <script>
+      AOS.init({
+        delay : 6000,
+      }
+      );
+    </script>
+  </body>
+</html>

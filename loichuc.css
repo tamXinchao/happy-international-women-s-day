@@ -1,0 +1,12 @@
+body[data-aos-delay='4200'] [data-aos],
+[data-aos][data-aos][data-aos-delay='4200'] {
+  transition-delay: 4200ms;
+}
+body[data-aos-delay='4400'] [data-aos],
+[data-aos][data-aos][data-aos-delay='4400'] {
+  transition-delay: 4400ms;
+}
+body[data-aos-delay='5000'] [data-aos],
+[data-aos][data-aos][data-aos-delay='5000'] {
+  transition-delay: 5000ms;
+}
